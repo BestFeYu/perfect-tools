@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "outDir": "./dist/",
+    "removeComments": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@examples/*": [
+        "examples/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+    },
+    "preserveConstEnums": true,
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "dist"
+  ]
+}
