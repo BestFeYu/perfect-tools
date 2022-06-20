@@ -1,0 +1,31 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --mode=development"
+  },
+  "author": "于天翔",
+  "license": "ISC",
+  "alias": {
+    "react": "../node_modules/react",
+    "react-dom": "../node_modules/react-dom/profiling",
+    "@types/react": "../node_modules/@types/react",
+    "@types/react-dom": "../node_modules/@types/react-dom",
+    "style-loader": "../node_modules/style-loader",
+    "clean-webpack-plugin": "../node_modules/clean-webpack-plugin",
+    "css-loader": "../node_modules/css-loader",
+    "html-webpack-plugin": "../node_modules/html-webpack-plugin",
+    "typescript": "../node_modules/typescript",
+    "webpack": "../node_modules/webpack",
+    "webpack-cli": "../node_modules/webpack-cli",
+    "@babel/core": "../node_modules/@babel/core",
+    "@babel/preset-env": "../node_modules/@babel/preset-env",
+    "@babel/preset-react": "../node_modules/@babel/preset-react",
+    "@babel/preset-typescript": "../node_modules/@babel/preset-typescript"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^4.9.2"
+  }
+}
