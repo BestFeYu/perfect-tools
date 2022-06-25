@@ -2,27 +2,41 @@
 const dev = require("./webpack/webpack.dev.config");
 const production = require("./webpack/webpack.production.config");
 const common = require("./webpack/webpack.common.config");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const es = require("./webpack/webpack.es.config");
+const commonjs = require("./webpack/webpack.commonjs.config");
+const path = require("path");
 
 let config = {
   ...common,
 };
 
 module.exports = (env, argv) => {
-  // console.log(argv.mode, 'mode', argv.target[0], 'target');
   if (argv.mode === "development") {
     config = { ...config, ...dev };
-    // config.plugins = []
   } else if (argv.mode === "production") {
     config = { ...config, ...production };
-    // console.log("config", config);
-    // if (argv.target[0] === 'es') {
-
-    // }
-    // if (argv.target[0] === 'umd') {
-
-    // }
+    if (env["es"]) {
+      config = { ...config, ...es };
+      config.module.rules[0].use = [
+        {
+          loader: "ts-loader",
+          options: {
+            configFile: path.resolve(__dirname, "tsconfig.es.json"),
+          },
+        },
+      ];
+    }
+    if (env["commonjs"]) {
+      config = { ...config, ...commonjs };
+      config.module.rules[0].use = [
+        {
+          loader: "ts-loader",
+          options: {
+            configFile: path.resolve(__dirname, "tsconfig.cjs.json"),
+          },
+        },
+      ];
+    }
   }
-  console.log("config", config);
   return config;
 };

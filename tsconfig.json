@@ -13,15 +13,10 @@
     "removeComments": true,
     "skipLibCheck": true,
     "noImplicitAny": true,
-    "emitDeclarationOnly": true,
     "jsx": "react",
-    "outDir": "./lib",
     "baseUrl": ".",
     "declaration": true,
     "paths": {
-      "@examples/*": [
-        "examples/*"
-      ],
       "@components/*": [
         "lib/*"
       ],
