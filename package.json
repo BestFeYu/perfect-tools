@@ -1,19 +1,16 @@
 {
-  "name": "webpack",
-  "version": "1.0.0",
+  "name": "perfect-tools",
+  "version": "0.0.7",
   "description": "",
   "scripts": {
-    "build": "webpack --mode=production",
-    "dev": "webpack --watch --mode=development --progress",
+    "build": "./scripts/build && yalc push",
     "build:es": "webpack --mode=production --env es",
     "build:cjs": "webpack --mode=production --env commonjs",
-    "build:": "webpack --mode=production",
     "tsc": "tsc --noEmit"
   },
   "author": "yutianxiang",
   "license": "ISC",
   "files": [
-    "dist",
     "lib",
     "es"
   ],
@@ -47,6 +44,7 @@
     "@types/react-dom": "^18.0.5",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^7.2.2",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "declaration-bundler-webpack-plugin": "^1.0.3",
